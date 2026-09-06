@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Poster — Know Your Rights Ghana</title>
+<style>
+body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:#eee;display:flex;justify-content:center}
+.poster{width:420px;max-width:96vw;background:linear-gradient(160deg,#0b1020,#1a2450);color:#fff;text-align:center;padding:34px 26px;box-sizing:border-box;border:10px solid #ffc400;margin:20px 0}
+.flag{display:flex;height:10px;margin-bottom:18px}
+.flag span{flex:1}.r{background:#e53935}.g2{background:#ffc400}.g3{background:#2ecc71}
+h1{font-size:2rem;margin:.2em 0;color:#ffc400}
+p.sub{font-size:1.05rem;color:#9aa6d1;margin:8px 0 20px}
+ul{text-align:left;font-size:1.05rem;line-height:1.7;list-style:none;padding:0}
+.big{font-size:1.5rem;font-weight:800;background:#25d366;color:#062;padding:14px;border-radius:14px;margin:20px 0;word-break:break-all}
+.qr img{width:210px;height:210px;border-radius:12px;background:#fff;padding:8px}
+.note{font-size:.8rem;color:#9aa6d1;margin-top:16px}
+@media print{body{background:#fff}.poster{margin:0;border-width:6px}}
+</style></head><body>
+<div class="poster">
+<div class="flag"><span class="r"></span><span class="g2"></span><span class="g3"></span></div>
+<h1>⚖️ KNOW YOUR RIGHTS<br>GHANA 🇬🇭</h1>
+<p class="sub">Your Constitution in your pocket — FREE, works offline!</p>
+<ul>
+<li>⚖️ Your fundamental rights (Articles 12–33)</li>
+<li>🧒 Children's rights &amp; where to report</li>
+<li>🚨 SOS: arrested? Read this first!</li>
+<li>🏛️ How the courts work</li>
+<li>🎓 How to become a lawyer — new 2026 rules</li>
+<li>🌍 English · Twi · Ewe · Ga</li>
+</ul>
+<div class="big">👉 TAP OR SCAN:<br><span id="site">YOUR-LINK-HERE</span></div>
+<div class="qr"><img id="qrim" alt="QR code"></div>
+<p class="note">Scan with your phone camera · Add to Home Screen · Share with WhatsApp</p>
+</div>
+<script>
+var SITE_URL="PASTE-YOUR-LINK-HERE";
+document.getElementById("site").textContent=SITE_URL;
+var qr=document.getElementById("qrim");
+if(SITE_URL.indexOf("http")===0){qr.src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data="+encodeURIComponent(SITE_URL);}
+</script>
+</body></html>

@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="Know Your Rights Ghana — your constitutional rights, children's rights, the courts, and the road to becoming a lawyer. Free, offline, in English, Twi, Ewe and Ga.">
+<title>Know Your Rights Ghana</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon.svg">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="brand" data-nav="home" aria-label="Home">
+    <span class="brand-logo">⚖️</span>
+    <span class="brand-name">Know Your Rights <em>GH</em></span>
+  </button>
+  <div class="topbar-actions">
+    <button id="langBtn" class="chip" aria-label="Change language">EN ▾</button>
+    <button id="searchBtn" class="chip" aria-label="Search">🔍</button>
+  </div>
+  <div id="langMenu" class="lang-menu" hidden>
+    <button data-lang="en">English</button>
+    <button data-lang="tw">Twi</button>
+    <button data-lang="ewe">Eʋegbe (Ewe)</button>
+    <button data-lang="ga">Ga</button>
+  </div>
+</header>
+
+<main id="app">
+
+  <section class="view" id="view-home">
+    <div class="hero">
+      <h1 id="homeTitle">Know Your Rights, Ghana! 🇬🇭</h1>
+      <p id="homeSub">The Constitution is yours. Learn it. Use it. Share it.</p>
+      <div class="hero-btns">
+        <button class="btn primary" data-nav="rights" id="homeCta1">📖 Start Learning</button>
+        <button class="btn danger" data-nav="sos" id="homeCta2">🚨 Emergency SOS</button>
+      </div>
+    </div>
+    <div class="fact-box card" id="factBox">
+      <span class="fact-label">💡 Did you know?</span>
+      <p id="factText"></p>
+    </div>
+    <div class="ask card">
+      <label id="askLabel" for="askInput">💬 Ask about your rights</label>
+      <div class="ask-row">
+        <input id="askInput" type="text" placeholder="e.g. Can police search my house?">
+        <button class="btn primary" id="askBtn">Ask</button>
+      </div>
+      <div id="askResult"></div>
+    </div>
+    <h2 id="exploreTitle">Explore</h2>
+    <div class="grid-links">
+      <button class="qlink" data-nav="rights"><span>⚖️</span>Your Rights</button>
+      <button class="qlink kid" data-nav="children"><span>🧒</span>Children's Rights</button>
+      <button class="qlink" data-nav="enforcement"><span>🛡️</span>Enforcement &amp; Help</button>
+      <button class="qlink" data-nav="courts"><span>🏛️</span>The Courts</button>
+      <button class="qlink bar" data-nav="bar"><span>🎓</span>Road to the Bar</button>
+      <button class="qlink" data-nav="quiz"><span>🎯</span>Quizzes</button>
+      <button class="qlink" data-nav="about"><span>ℹ️</span>About</button>
+    </div>
+    <div class="share-site card">
+      <p id="shareSiteText">Love this app? Share it with friends and family 🙏</p>
+      <button class="btn wa" id="shareSiteBtn">📲 Share on WhatsApp</button>
+    </div>
+  </section>
+
+  <section class="view" id="view-rights" hidden>
+    <div class="view-head">
+      <h1 id="rightsTitle">⚖️ Your Fundamental Rights</h1>
+      <p id="rightsSub">Chapter 5 of Ghana's 1992 Constitution — Articles 12 to 33.</p>
+    </div>
+    <div class="chips" id="rightsChips"></div>
+    <div id="rightsList" class="cards"></div>
+    <div class="ask card">
+      <label id="askLabel2" for="askInput2">💬 Ask a question</label>
+      <div class="ask-row">
+        <input id="askInput2" type="text" placeholder="Type your question…">
+        <button class="btn primary" id="askBtn2">Ask</button>
+      </div>
+      <div id="askResult2"></div>
+    </div>
+  </section>
+
+  <section class="view" id="view-children" hidden>
+    <div class="view-head kid">
+      <h1 id="kidsTitle">🧒 Children's Rights</h1>
+      <p id="kidsSub">Article 28 of the Constitution protects every child under 18.</p>
+    </div>
+    <div class="chips" id="kidsTabs">
+      <button class="chip active" data-kidtab="kids">🧒 For Children</button>
+      <button class="chip" data-kidtab="adults">👩‍🏫 For Parents &amp; Teachers</button>
+    </div>
+    <div id="kidsContent" class="cards"></div>
+  </section>
+
+  <section class="view" id="view-enforcement" hidden>
+    <div class="view-head">
+      <h1 id="enfTitle">🛡️ Enforcement &amp; Where to Get Help</h1>
+      <p id="enfSub">A right you cannot enforce is a right you cannot use. Here is how to act.</p>
+    </div>
+    <div id="enfList" class="cards"></div>
+  </section>
+
+  <section class="view" id="view-courts" hidden>
+    <div class="view-head">
+      <h1 id="courtsTitle">🏛️ The Court System</h1>
+      <p id="courtsSub">From the Magistrate's bench to the Supreme Court.</p>
+    </div>
+    <div id="courtsList" class="cards"></div>
+  </section>
+
+  <section class="view" id="view-bar" hidden>
+    <div class="view-head bar">
+      <h1 id="barTitle">🎓 Road to the Bar</h1>
+      <p id="barSub">How to become a lawyer in Ghana — from SHS to the courtroom.</p>
+    </div>
+    <div class="chips" id="barChips"></div>
+    <div id="barContent" class="cards"></div>
+  </section>
+
+  <section class="view" id="view-quiz" hidden>
+    <div class="view-head">
+      <h1 id="quizTitle">🎯 Play &amp; Learn</h1>
+      <p id="quizSub">Test yourself. Learn faster. Score higher.</p>
+    </div>
+    <div id="quizPicker" class="grid-links"></div>
+    <div id="quizRunner" hidden></div>
+  </section>
+
+  <section class="view" id="view-sos" hidden>
+    <div class="view-head sos">
+      <h1>🚨 SOS — Read This Now</h1>
+      <p>Stay calm. You have rights. The police cannot take them away.</p>
+    </div>
+    <button class="btn primary speak-all" id="sosSpeak">🔊 Read my rights aloud</button>
+    <div id="sosList" class="cards"></div>
+    <div id="sosContacts"></div>
+    <div class="card kid" id="sosChild">
+      <h3>🧒 A child is in danger?</h3>
+      <p id="sosChildText"></p>
+    </div>
+  </section>
+
+  <section class="view" id="view-about" hidden>
+    <div class="view-head">
+      <h1>ℹ️ About</h1>
+      <p>Know Your Rights Ghana</p>
+    </div>
+    <div class="card">
+      <h3 id="aboutVerified">✅ Content verified</h3>
+      <p>Constitution of the Republic of Ghana (1992), Chapter 5 · Legal Education Act 2026 (Act 1170) reports · Judicial Service of Ghana. <strong>Last verified: September 2026.</strong></p>
+    </div>
+    <div class="card">
+      <h3 id="aboutDisclaimer">⚠️ Disclaimer</h3>
+      <p>This app gives general legal information, not legal advice. For advice on your specific case, contact CHRAJ, the Legal Aid Commission or a lawyer. Laws can change — always check the latest position.</p>
+    </div>
+    <div class="card">
+      <h3 id="aboutFeedback">💬 Feedback</h3>
+      <p id="aboutFeedbackText">Found an error? Something unclear? Help us improve.</p>
+      <button class="btn wa" id="reportBtn">📩 Report a correction</button>
+    </div>
+    <div class="card">
+      <h3 id="aboutLang">🌍 Languages</h3>
+      <p id="aboutLangText">English, Twi, Ewe and Ga. Local-language translations benefit from community review — if you spot an improvement, tell us!</p>
+    </div>
+  </section>
+
+</main>
+
+<nav class="bottom-nav" aria-label="Main navigation">
+  <button data-nav="home" class="active"><span>🏠</span><i id="navHome">Home</i></button>
+  <button data-nav="rights"><span>⚖️</span><i id="navRights">Rights</i></button>
+  <button data-nav="children"><span>🧒</span><i id="navKids">Kids</i></button>
+  <button data-nav="bar"><span>🎓</span><i id="navBar">Bar</i></button>
+  <button data-nav="sos" class="sos"><span>🚨</span><i>SOS</i></button>
+</nav>
+
+<div class="overlay" id="searchOverlay" hidden>
+  <div class="search-panel">
+    <div class="ask-row">
+      <input id="searchInput" type="text" placeholder="Search rights, courts, lawyers…">
+      <button class="btn" id="searchClose">✕</button>
+    </div>
+    <div id="searchResults" class="cards"></div>
+  </div>
+</div>
+
+<div id="installBanner" hidden>
+  <span id="installText">📲 Install this app on your phone</span>
+  <button class="btn primary" id="installBtn">Install</button>
+  <button id="installDismiss">✕</button>
+</div>
+
+<div id="toast" hidden></div>
+
+<script src="js/data-rights.js"></script>
+<script src="js/data-lawpath.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

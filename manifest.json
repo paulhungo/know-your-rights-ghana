@@ -1,0 +1,16 @@
+﻿{
+  "name": "Know Your Rights Ghana",
+  "short_name": "RightsGH",
+  "description": "Your constitutional rights, children's rights, the courts, and the road to the Bar — free, offline, in English, Twi, Ewe and Ga.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b1020",
+  "theme_color": "#0b1020",
+  "lang": "en",
+  "icons": [
+    {"src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"},
+    {"src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable"}
+  ]
+}
